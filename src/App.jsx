@@ -29,7 +29,7 @@ const GeolocationTracing = () => {
       setError("Geolocation is not supported in this browser");
     }
     const ffffff = async (position) => {
-      await axios.get(" https://frontloco.onrender.com").then((res) => {
+      await axios.get("https://backloco.onrender.com").then((res) => {
         setlongi(res.data[0].writtenby);
         setlongit(res.data[0].moviename);
         console.log(7);
@@ -40,9 +40,10 @@ const GeolocationTracing = () => {
   }, []);
 
   const ffffff = async (position) => {
-    await axios.get(" https://frontloco.onrender.com").then((res) => {
+    await axios.get(" https://backloco.onrender.com").then((res) => {
       setlongi(res.data[0].writtenby);
       setlongit(res.data[0].moviename);
+      console.log(res.data[0].moviename);
       console.log(7);
       console.log(nametrue);
     }); //
@@ -127,7 +128,7 @@ const GeolocationTracing = () => {
     //
     //
     await axios
-      .put("https://frontloco.onrender.com65e312974969474a487aa28d", {
+      .put("https://backloco.onrender.com/65e312974969474a487aa28d", {
         moviename: location?.longitude,
         writtenby: location?.latitude,
       })
@@ -175,7 +176,7 @@ const GeolocationTracing = () => {
   ////
   const posty = async (position) => {
     await axios
-      .post(" https://frontloco.onrender.com", {
+      .post("https://backloco.onrender.com", {
         moviename: location.latitude,
         writtenby: location.longitude,
       })
@@ -186,7 +187,7 @@ const GeolocationTracing = () => {
   };
 
   const fdel = async () => {
-    await axios.delete(" https://frontloco.onrender.com").then((res) => {
+    await axios.delete("https://backloco.onrender.com").then((res) => {
       console.log(res.data.moviename);
       console.log(res);
     }); //
