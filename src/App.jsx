@@ -135,9 +135,11 @@ const GeolocationTracing = () => {
       .then((res) => {
         let latitude = res.data.moviename;
         let longitude = res.data.writtenby;
-        // setLocation({ latitude, longitude });
+        setLocation({ latitude, longitude });
+        setlongi(res.data.moviename);
+        setlongit(res.data.writtenby);
         // console.log(res.data.moviename);
-        // console.log(res.data);
+        console.log("updated");
         console.log(0);
       });
     setnametrue(!nametrue);
